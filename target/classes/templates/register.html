@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iniciar sesión - FaceUTEQ</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/styles.css}">
+
+        <!-- Fontawesome CSS -->
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/fontawesome-free-5.15.3-web/css/all.min.css}">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/style-form.css}">
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/style.css}">
+
+        <!-- Google font -->
+        <link rel="preconnect" type="text/css" media="all" th:href="@{https://fonts.gstatic.com}">
+        <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Condensed:wght@300&display=swap}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid mt-5" style="margin-left: -12px;">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4"></div>
+                <div class="col-xl-4 col-lg-4 col-md-6" style="margin-left: 10px;">
+                    <div class="card shadow-lg p-3 mb-5 bg-white">
+                        <h4>Sistema de autentificaci&oacute;n</h4>
+                        <br>
+                        <div class="card-header">
+                            Registrese utilizando su correo electr&oacute;nico
+                        </div>
+                        <div class="card-body">
+                            <div id="alerta"></div>
+                            <form method="post" th:action="@{/registerusuario}">
+                                <div class="form-row">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="col-md-12 mb-3">
+                                                <label for="nombUsua">Nombre completo <font color="red">*</font></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupPrepend" style="height: 38px; width: 42px;">
+                                                            <i class="far fa-address-card"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input name="nombUsua" type="text" class="form-control" id="nombUsua" placeholder="Ingresa tu nombre completo" aria-describedby="inputGroupPrepend" minlength="4" required>
+                                                    <div class="invalid-feedback">Campo requerido.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="col-md-12 mb-3">
+                                                <label for="correoUsua">Correo electrónico <font color="red">*</font></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupPrepend" style="height: 38px; width: 42px;">
+                                                            <i class="far fa-address-card"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input name="correoUsua" type="text" class="form-control" id="correoUsua" placeholder="Ingresa tu correo electrónico" aria-describedby="inputGroupPrepend" minlength="4" required>
+                                                    <div class="invalid-feedback">Campo requerido.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="col-md-12 mb-3">
+                                                <label for="contraUsua">Contraseña <font color="red">*</font></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupPrepend" style="height: 38px; width: 42px;">
+                                                            <i class="far fa-address-card"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input name="contraUsua" type="password" class="form-control" id="contraUsua" placeholder="Ingresa tu contraseña" aria-describedby="inputGroupPrepend" minlength="4" required>
+                                                    <div class="invalid-feedback">Campo requerido.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div align="center">
+                                    <button class="btn btn-success" type="submit">
+                                        Registrarte
+                                    </button>
+                                    <div id="spinner" style="display: none;">
+                                        <br>
+                                        <div class="spinner-border" role="status"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <a th:href="@{/login}">Ya tengo una cuenta</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- JQUERY -->
+        <script th:src="@{/static/jquery-3.6.0/jquery.min.js}"></script>
+
+        <!-- Bootstrap JS -->
+        <script th:src="@{/static/css/js/scripts.js}"></script>
+    </body>
+</html>

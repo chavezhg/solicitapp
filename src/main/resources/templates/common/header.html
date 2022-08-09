@@ -1,0 +1,78 @@
+<head data-th-fragment="header">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/styles.css}">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/fontawesome-free-5.15.3-web/css/all.min.css}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/style-form.css}">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/style.css}">
+
+    <!-- Google font -->
+    <link rel="preconnect" type="text/css" media="all" th:href="@{https://fonts.gstatic.com}">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Condensed:wght@300&display=swap}" rel="stylesheet">
+</head>
+
+<!--- Navbar --->
+<body class="sb-nav-fixed" data-th-fragment="navbar">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3 text-uppercase" th:href="@{/principal}">FaceUTEQ</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" th:href="@{/perfil}">Mi perfil</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" th:href="@{/logout}">Cerrar sesi&oacute;n</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading text-uppercase" style="color: #D4D2D2;">Opciones generales</div>
+                        
+                        <a class="nav-link" th:href="@{/principal}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                            Inicio
+                        </a>
+                        <a class="nav-link" th:href="@{/publicaciones}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
+                            Mis publicaciones
+                        </a>
+                        <a class="nav-link" th:href="@{/amigos}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
+                            Mis amigos
+                        </a>
+                        <a class="nav-link" th:href="@{/buscaramigos}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
+                            Buscar amigos
+                        </a>
+                        <a class="nav-link" th:href="@{/solicitudes}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
+                            Ver solicitudes
+                        </a>
+
+                        <!-- Termina panel de usuario -->
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Navbar -->

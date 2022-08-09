@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iniciar sesión - FaceUTEQ</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/styles.css}">
+
+        <!-- Fontawesome CSS -->
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/fontawesome-free-5.15.3-web/css/all.min.css}">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/style-form.css}">
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/style.css}">
+
+        <!-- Google font -->
+        <link rel="preconnect" type="text/css" media="all" th:href="@{https://fonts.gstatic.com}">
+        <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Condensed:wght@300&display=swap}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid mt-5" style="margin-left: -12px;">
+            <div class="row" align="center">
+                <div class="col-xl-4 col-lg-4 col-md-4"></div>
+                <div class="col-xl-4 col-lg-4 col-md-6" style="margin-left: 10px;">
+                    <div class="card shadow-lg p-3 bg-white">
+                        <h4>Sistema de autentificaci&oacute;n</h4>
+                        <br>
+                        <div class="card-header">
+                            Inicie sesi&oacute;n utilizando su correo electr&oacute;nico
+                        </div>
+                        <div class="card-body">
+                            <div id="alerta"></div>
+                            <form method="post" th:action="@{/login}" th:object="${user}">
+                                <div class="form-row">
+                                    <div class="col-md-12 mb-3">
+                                        <label for="email">Correo electr&oacute;nico <font color="red">*</font></label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupPrepend" style="height: 38px; width: 42px;">
+                                                    <i class="fas fa-at"></i>
+                                                </span>
+                                            </div>
+                                            <input name="username" type="email" class="form-control" id="username" placeholder="Ingresa tu correo electr&oacute;nico" aria-describedby="inputGroupPrepend" required>
+                                            <div class="invalid-feedback">Ingresa un correo electr&oacute;nico v&aacute;lido.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <label for="password">Contrase&ntilde;a <font color="red">*</font></label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupPrepend" style="height: 38px; width: 42px;">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                            </div>
+                                            <input name="password" type="password" class="form-control" id="password" placeholder="Ingresa tu contrase&ntilde;a" aria-describedby="inputGroupPrepend" minlength="4" required>
+                                            <div class="invalid-feedback">Campo requerido.</div>   
+                                        </div>
+                                    </div>
+                                </div>
+                                <div align="center">
+                                    <button class="btn btn-success" type="submit" id="submit">
+                                        Iniciar sesi&oacute;n
+                                    </button>
+                                    <div id="spinner" style="display: none;">
+                                        <br>
+                                        <div class="spinner-border" role="status"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <a th:href="@{/register}">Crear cuenta</a>
+                                <!--<br><br><br>
+                                <div align="center"><a th:href="@{/recovery}">¿Olvidaste tu contraseña?</a></div>-->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- JQUERY -->
+        <script th:src="@{/static/jquery-3.6.0/jquery.min.js}"></script>
+
+        <!-- Bootstrap JS -->
+        <script th:src="@{/static/css/js/scripts.js}"></script>
+    </body>
+</html>

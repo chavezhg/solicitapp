@@ -1,1 +1,10 @@
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\service\UsuarioService.java
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\model\entity\Usuario.java
 C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\SolicitappApplication.java
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\controller\UsuarioController.java
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\service\IUsuarioService.java
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\util\EncriptarPassword.java
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\config\WebSecurityConfig.java
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\service\UsuarioServiceImp.java
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\dao\IUsuario.java
+C:\Users\Ricardo\Documents\Proyectos\Spring\solicitapp\src\main\java\mx\edu\uteq\solicitapp\util\GenerateTokens.java
