@@ -35,6 +35,11 @@ public class UsuarioController {
     public String register(Model model) {
         return "register";
     }
+    
+    @GetMapping("/principal")
+    public String principal(Model model) {
+        return "principal";
+    }
 
     @PostMapping(path = "/registerusuario")
     @ResponseBody
