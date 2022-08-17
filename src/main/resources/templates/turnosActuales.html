@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>SolicitAPP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Header Start -->
+    <head th:insert="common/header :: header"></head>
+    <!-- Header End -->
+</head>
+
+<!-- Navbar Start -->
+<head th:insert="common/header :: navbar"></head>
+<!-- Navbar End -->
+
+<!-- All content -->
+
+<div id="layoutSidenav_content" style="background-color: #f5f7fb;">
+    <main>
+        <div class="container-fluid m-4">
+
+            <h1 class="mb-3">Turnos actuales</h1>
+
+                <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2">
+                    
+                    <div class="card text-dark bg-light mb-3 me-5" style="max-width: 18rem;" data-th-each="t:${turnos}">
+                        
+                            <div class="card-header" align="center" data-th-text="'Solicitud número ' + ${t.idTurn}"></div>
+                            <div class="card-body">
+                                <h5 class="card-title" data-th-text="${t.solicitud.nomAlumnSoli}"></h5>
+                                <p class="card-text" data-th-text="'Matrícula: ' + ${t.solicitud.matAlumnSoli}"></p>
+                                <p class="card-text" data-th-text="'Asunto: ' + ${t.solicitud.asuntoSoli}"></p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-12" align="left">
+                                        <button type="button" data-th-onclick="'finalizar(\'' + ${t.idTurn} + '\');'" class="btn btn-danger w-100">Finalizar turno</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+            
+            <script>
+                function finalizar(idTurn){
+                    var url = 'finalizarTurno';
+                    var data = {idTurn : idTurn};
+
+                    fetch(url, {
+                      method: 'POST',
+                      body: JSON.stringify(data),
+                      headers:{
+                        'Content-Type': 'application/json'
+                      }
+                    })
+                    .catch(error => console.log('Error: ' + error))
+                    .then(alert('Turno finalizado correctamente'))
+                    .then(window.location.reload());
+                }
+                </script>
+
+        </div>
+    </main>
+</div>
+
+</div>
+
+
+<!-- All content -->
+
+<!-- Footer Start -->
+<head th:insert="common/footer :: footer"></head>
+<!-- Footer End -->
+
+<!-- Scripts Start -->
+<head th:insert="common/footer :: scripts"></head>
+<!-- Scripts End -->
+</body>
+</html>

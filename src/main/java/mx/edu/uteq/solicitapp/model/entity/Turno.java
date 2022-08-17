@@ -22,8 +22,9 @@ public class Turno implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long idTurn;
-    @Column(name = "id_soli", nullable = false)
-    public String idSoli;
+    @ManyToOne
+    @JoinColumn(name = "id_soli", nullable = false)
+    public Solicitud solicitud;
     @Column(name = "esta_turn", nullable = false)
     public String estaTurn;
 

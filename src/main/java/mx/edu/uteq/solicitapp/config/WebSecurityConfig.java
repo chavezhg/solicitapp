@@ -5,6 +5,7 @@
  */
 package mx.edu.uteq.solicitapp.config;
 
+import mx.edu.uteq.solicitapp.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +26,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
 
     BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -52,7 +53,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/solicitarTurno*").permitAll()
+                .antMatchers("/verTurnos*").permitAll()
                 .antMatchers("/login*").permitAll()
+                .antMatchers("/registrarTurno").permitAll()
+                .antMatchers("/getAllProfesores").permitAll()
                 .antMatchers("/static/**").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/registerusuario").permitAll()

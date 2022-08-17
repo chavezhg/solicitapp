@@ -23,7 +23,10 @@ public interface IUsuario extends JpaRepository<Usuario, Long> {
     public Usuario findByCorreoUsua(String correoUsua);
     
     @Transactional
-    @Query(value = "SELECT * FROM usuario WHERE correo_usua = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM profesor\n" +
+                    "INNER JOIN usuario ON usuario.id_usua = profesor.id_usua\n" +
+                    "WHERE acti_prof = 1\n" +
+                    "AND correo_usua = ?1", nativeQuery = true)
     Usuario findUsuaByEmail(String correoUsua);
     
     @Transactional

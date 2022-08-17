@@ -86,6 +86,23 @@
                                         </div>
                                     </div>
 
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="col-md-12 mb-3">
+                                                <label for="codCubi">Código de cubículo <font color="red">*</font></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupPrepend" style="height: 38px; width: 42px;">
+                                                            <i class="far fa-address-card"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input name="codCubi" type="text" class="form-control" id="codCubi" placeholder="Ingresa tu código de cubículo" aria-describedby="inputGroupPrepend" minlength="1" required>
+                                                    <div class="invalid-feedback">Campo requerido.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div align="center">
                                     <button class="btn btn-success" type="submit">
@@ -97,7 +114,9 @@
                                     </div>
                                 </div>
                                 <br>
-                                <a th:href="@{/login}">Ya tengo una cuenta</a>
+                                <a th:href="@{/login}">Ya tengo una cuenta</a><br>
+                                <a th:href="@{/solicitarTurno}">Solicitar turno</a><br>
+                                <a th:href="@{/verTurnos}">Ver turnos</a>
                             </form>
                         </div>
                     </div>

@@ -5,6 +5,8 @@
  */
 package mx.edu.uteq.solicitapp.controller;
 
+import mx.edu.uteq.solicitapp.service.ICubiculoService;
+import mx.edu.uteq.solicitapp.service.IProfesorService;
 import mx.edu.uteq.solicitapp.service.IUsuarioService;
 import static mx.edu.uteq.solicitapp.util.EncriptarPassword.encriptarPassword;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +27,20 @@ public class UsuarioController {
     
     @Autowired
     IUsuarioService usuarioService;
+    
+    @Autowired
+    IProfesorService profesorService;
+    
+    @Autowired
+    ICubiculoService cubiculoService;
 
-    @GetMapping({"/", "/login"})
+    @GetMapping("/")
     public String page(Model model) {
+        return "solicitarTurno";
+    }
+    
+    @GetMapping("/login")
+    public String login(Model model) {
         return "login";
     }
 
@@ -35,20 +48,18 @@ public class UsuarioController {
     public String register(Model model) {
         return "register";
     }
-    
-    @GetMapping("/principal")
-    public String principal(Model model) {
-        return "principal";
-    }
 
     @PostMapping(path = "/registerusuario")
     @ResponseBody
     public ModelAndView registerusuario(
             @RequestParam("nombUsua") String nombUsua,
             @RequestParam("correoUsua") String correoUsua,
-            @RequestParam("contraUsua") String contraUsua) {
+            @RequestParam("contraUsua") String contraUsua,
+            @RequestParam("codCubi") String codCubi) {
 
             usuarioService.insert(nombUsua, correoUsua, encriptarPassword(contraUsua));
+            cubiculoService.insert(codCubi, "Si");
+            profesorService.insert(cubiculoService.getLastId(), usuarioService.getLastId());
 
         return new ModelAndView("redirect:/login");
     }

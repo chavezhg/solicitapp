@@ -25,6 +25,10 @@ public class Solicitud implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_prof", nullable = true)
     public Profesor profesor;
+    @Column(name = "nom_alumn_soli", nullable = false)
+    public String nomAlumnSoli;
     @Column(name = "mat_alumn_soli", nullable = false)
     public String matAlumnSoli;
+    @Column(name = "asunto_soli", nullable = false)
+    public String asuntoSoli;
 }

@@ -22,10 +22,13 @@ public class Profesor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long idProf;
-    @Column(name = "id_cubi", nullable = false)
-    public String idCubi;
+    @Column(name = "acti_prof", nullable = false)
+    public String actiProf;
     @ManyToOne
-    @JoinColumn(name = "id_usua", nullable = true)
+    @JoinColumn(name = "id_cubi", nullable = false)
+    public Cubiculo cubiculo;
+    @ManyToOne
+    @JoinColumn(name = "id_usua", nullable = false)
     public Usuario usuario;
 
 }

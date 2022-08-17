@@ -32,7 +32,7 @@ public class UsuarioService implements UserDetailsService{
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String correoUsua) throws UsernameNotFoundException{
-        Usuario usuario = interfazUsuario.findByCorreoUsua(correoUsua);
+        Usuario usuario = interfazUsuario.findUsuaByEmail(correoUsua);
         if (usuario==null){
             throw new UsernameNotFoundException(correoUsua);
         }
