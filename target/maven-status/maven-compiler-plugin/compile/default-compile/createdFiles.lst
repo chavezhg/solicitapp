@@ -1,5 +1,6 @@
 mx\edu\uteq\solicitapp\service\IUsuarioService.class
 mx\edu\uteq\solicitapp\model\entity\Profesor.class
+mx\edu\uteq\solicitapp\model\entity\RequestSolicitud.class
 mx\edu\uteq\solicitapp\service\ProfesorServiceImp.class
 mx\edu\uteq\solicitapp\util\EncriptarPassword.class
 mx\edu\uteq\solicitapp\dao\ISolicitud.class
@@ -10,12 +11,16 @@ mx\edu\uteq\solicitapp\config\WebSecurityConfig.class
 mx\edu\uteq\solicitapp\service\UsuarioServiceImp.class
 mx\edu\uteq\solicitapp\service\UsuarioService.class
 mx\edu\uteq\solicitapp\service\TurnoServiceImp.class
+mx\edu\uteq\solicitapp\controller\TurnoController.class
 mx\edu\uteq\solicitapp\dao\IUsuario.class
 mx\edu\uteq\solicitapp\service\ISolicitudService.class
+mx\edu\uteq\solicitapp\service\CubiculoServiceImp.class
 mx\edu\uteq\solicitapp\service\UserDetailsServiceImpl.class
 mx\edu\uteq\solicitapp\service\ITurnoService.class
+mx\edu\uteq\solicitapp\service\ICubiculoService.class
 mx\edu\uteq\solicitapp\model\entity\Usuario.class
 mx\edu\uteq\solicitapp\model\entity\Solicitud.class
+mx\edu\uteq\solicitapp\dao\ICubiculo.class
 mx\edu\uteq\solicitapp\model\entity\Cubiculo.class
 mx\edu\uteq\solicitapp\util\GenerateTokens.class
 mx\edu\uteq\solicitapp\SolicitappApplication.class

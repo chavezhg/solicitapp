@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: mx.edu.uteq.solicitapp.SolicitappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.603 s - in mx.edu.uteq.solicitapp.SolicitappApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.068 s - in mx.edu.uteq.solicitapp.SolicitappApplicationTests
